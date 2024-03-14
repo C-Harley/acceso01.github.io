@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo numero 01</title>
+</head>
+<body>
+
+      <div id="login" >
+
+         <form action="bienvenido.php" method="POST">
+
+            <h2>Inicio de Sesion</h2>
+            <label>Usuario: </label><br>
+            <input type="text" name="user" id="user" /><br>
+
+            <label>Contraseña: </label><br>
+            <input type="password" name="password" id="password" /><br><br>
+
+            <input class="btn" type="submit" value="Conectar"/>
+
+         </form>
+         <?php
+         if(isset($_GET['retornar'])) 
+         {
+            $error=$_GET['retornar'];
+            if($error=="incorrecto"){
+               echo "<h4><font color=red> Datos ingresados incorrectos </font> </h4>";
+            }
+         } ?>
+      </div>
+
+   </body>
+</html>
